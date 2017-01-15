@@ -5,22 +5,42 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-	/*
-
-	Escribe un programa que cree al azar tres variables enteras y
-	las compare entre sí, sacando en pantalla cual de ellas es la mayor,
-	la siguiente más grande y la menor.
-
-    Hay que tener en cuenta si son iguales, nunca se sabe.
-	 */
 
         Random r = new Random();
-        int aleatorio = r.nextInt();
-        int aleatorio2 = r.nextInt();
-        int aleatorio3 = r.nextInt();
+        int n1 = r.nextInt();
+        int n2 = r.nextInt();
+        int n3 = r.nextInt();
 
 
-        if (aleatorio > aleatorio2 )
+        if ( n1 > n2 && n1 > n3 ) {
+            System.out.println("La mayor es: " + n1);
+            if (n2 > n3) {
+                System.out.println("La siguiente más grande es: " + n2);
+                System.out.println("La menor es: " + n3);
+
+            }
+        }
+
+        if ( n2 > n1 && n2 > n3 ) {
+            System.out.println("La mayor es: " + n2);
+            if (n1 > n3) {
+                System.out.println("La siguiente más grande es: " + n1);
+                System.out.println("La menor es: " + n3);
+
+            }
+        }
+
+        if ( n3 > n1 && n3 > n2 ) {
+            System.out.println("La mayor es: " + n3);
+            if (n1 > n2) {
+                System.out.println("La siguiente más grande es: " + n1);
+                System.out.println("La menor es: " + n2);
+
+            }
+        }
+
+
+
 
 
     }
