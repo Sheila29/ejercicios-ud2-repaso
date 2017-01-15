@@ -8,10 +8,10 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-    public static char cifrar(char[] texto, char[] alfabeto) {
+    /*public static char cifrar(char[] texto, char[] descifrado) {
 
 
-        int[] cifrado = new int[alfabeto.length];
+        int[] cifrado = new int[descifrado.length];
 
 
         // Recorrido
@@ -20,11 +20,11 @@ public class Main {
             int j = 0;
 
             // Búsqueda lineal en un array
-            while (j < alfabeto.length && texto[i] != alfabeto[j]) {
+            while (j < descifrado.length && texto[i] != descifrado[j]) {
                 j++;
             }
 
-            if (j < alfabeto.length) {
+            if (j < descifrado.length) {
                 cifrado[j] = alfabeto[j] + 13;
             }
         }
@@ -32,22 +32,25 @@ public class Main {
         return cifrado;
     }
 
+*/
 
 
+   /* public static char descifrar(){
 
-    public static char descifrar(){
-
-    }
+    }*/
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        char[] alfabeto = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+        char[] descifrado = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                            'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                            's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
-        char[] texto = new char[26];
+        char[] cifrado = new char[26];
+
+
+        System.out.println(cifrado[0]);
 
         char opcion = ' ';
         do {
@@ -61,10 +64,16 @@ public class Main {
 
             switch(opcion){
                 case 'a':
-
+                    for (int i = 0; i < 26 ; i++) {
+                        cifrado[i] = descifrado[i+13];
+                        System.out.println(cifrado[i]);
+                    }
                     break;
                 case 'b':
+                    for (int i = 0; i < 26; i++) {
+                        System.out.println(cifrado[i]);   
 
+                    }
                     break;
 
 
