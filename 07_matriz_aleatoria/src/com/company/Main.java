@@ -13,14 +13,14 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // Pide al usuario filas y columnas
-        System.out.println("Filas: ");
+        System.out.print("Filas: ");
         int filas = Integer.parseInt(br.readLine());
 
-        System.out.println("Columnas: ");
+        System.out.print("Columnas: ");
         int columnas = Integer.parseInt(br.readLine());
 
         Random r = new Random();
-        int aleatorio = r.nextInt();
+        int aleatorio = r.nextInt(6);
 
         // Generar matriz de números enteros aleatorios
         int[][] matriz = new int[filas][columnas];
@@ -28,8 +28,6 @@ public class Main {
         for (int f = 0; f < filas ; f++) {
             for (int c = 0; c < columnas; c++) {
                 matriz[f][c] = aleatorio;
-
-
             }
 
         }
@@ -38,7 +36,6 @@ public class Main {
             for (int f = 0; f < filas ; f++) {
             for (int c = 0; c < columnas; c++) {
                 System.out.format("%2d", matriz[f][c]);
-
             }
             System.out.println();
 
@@ -47,11 +44,11 @@ public class Main {
         /* Crea un array con el tamaño suficiente para almacenar todos los valores
         de la matriz y copia en él los datos */
 
-        int[][] array = new int[matriz.length][matriz[0].length];
+        int[] array = new int[matriz.length*matriz[0].length];
 
         for (int f = 0; f < matriz.length ; f++) {
             for (int c = 0; c < matriz[0].length; c++) {
-                array[f][c] = matriz[f][c];
+                array[f*3+c] =  matriz[f][c];
 
 
             }
@@ -59,23 +56,31 @@ public class Main {
         }
 
         // Muestra el array.
-        for (int f = 0; f < matriz.length ; f++) {
-            for (int c = 0; c < matriz[0].length; c++) {
-                System.out.format("%2d", array[f][c]);
 
-            }
-            System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
 
         }
+
 
         // Muestra el array eliminando los valores repetidos
 
-        for (int f = 0; f < ; f++) {
+int[] recuento = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+
+            int valor = array[i];
+            // buscar valor en recuento
+
+
+            int j = 0;
+            while ( array[i] != valor ){
+                recuento[j] = valor;
+                j++;
+            }
+
 
         }
-
-
-
 
 
 
