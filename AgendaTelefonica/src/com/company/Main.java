@@ -12,7 +12,7 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int[] telefonos = new int[50];
+        String[] telefonos = new String[50];
         String[] nombres = new String[50];
 
         int n = 0;
@@ -27,9 +27,15 @@ public class Main {
             System.out.println("Nombre:");
             String nombre = br.readLine();
 
+            telefonos[n] = telefono;
+            nombres[n] = nombre;
+
+
             n++;
             System.out.println("¿Quieres continuar? sino escribe FIN");
             respuesta = br.readLine();
+
+
 
         } while (n < 50 && !respuesta.equalsIgnoreCase("FIN"));
 
